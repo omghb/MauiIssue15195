@@ -4,38 +4,19 @@
              x:Class="MauiApp1.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+        <FlexLayout Wrap="Wrap" AlignItems="Start" AlignContent="Start">
+            <VerticalStackLayout FlexLayout.Grow="1" Margin="10">
+                <Grid RowDefinitions="47,3" BackgroundColor="Gray">
+                    <Label Text="Some title" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <BoxView Grid.Row="1" Color="Blue"/>
+                </Grid>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
+                <Grid BackgroundColor="Red" Margin="0,5">
+                    <Button x:Name="CounterBtn" HeightRequest="50" Text="Test Button" BackgroundColor="Green"/>
+                    <BoxView Color="Blue" HeightRequest="1" VerticalOptions="Start"/>
+                </Grid>
+            </VerticalStackLayout>
+        </FlexLayout>
     </ScrollView>
 
 </ContentPage>
